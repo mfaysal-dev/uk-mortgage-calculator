@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UK Mortgage Calculator 2026 – Monthly Repayments, Overpayments &amp; How Much Can I Borrow?</title>
+<meta name="description" content="Free UK mortgage calculator. See your monthly repayment, total interest and a year-by-year balance chart, how much overpaying saves, and how much you could borrow at 4–5.5x your income. Repayment or interest-only.">
+<link rel="canonical" href="https://uk-mortgage-repayment-calculator.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Mahir Faysal">
+<meta name="theme-color" content="#4338ca">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="UK Mortgage Calculator">
+<meta property="og:title" content="UK Mortgage Calculator 2026 – Repayments, Overpayments &amp; Affordability">
+<meta property="og:description" content="Monthly repayments, total interest, overpayment savings and how much you could borrow, all in one free calculator.">
+<meta property="og:url" content="https://uk-mortgage-repayment-calculator.vercel.app/">
+<meta property="og:image" content="https://uk-mortgage-repayment-calculator.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Mortgage Calculator 2026">
+<meta name="twitter:description" content="Monthly repayments, overpayment savings and how much you could borrow.">
+<meta name="twitter:image" content="https://uk-mortgage-repayment-calculator.vercel.app/og.png">
+<style>:root{--accent:#4338ca;--accent-2:#6366f1;--accent-soft:#eef0ff;--hero:linear-gradient(135deg,#1e1b4b 0%,#3730a3 50%,#6d28d9 100%)}
+@media (prefers-color-scheme:dark){:root{--accent:#a5b4fc;--accent-2:#818cf8;--accent-soft:#1c1f45}}</style>
+<link rel="stylesheet" href="base.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"UK Mortgage Calculator 2026","url":"https://uk-mortgage-repayment-calculator.vercel.app/","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"areaServed":{"@type":"Country","name":"United Kingdom"},"author":{"@type":"Person","name":"Mahir Faysal","url":"https://mfaysal.com"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much can I borrow for a mortgage in the UK?","acceptedAnswer":{"@type":"Answer","text":"Most UK lenders lend around 4 to 4.5 times your annual income (or joint income). Some offer up to 5 or 5.5 times for higher earners or certain professions. Lenders also run an affordability check on your outgoings and test whether you could still pay if rates rose."}},
+{"@type":"Question","name":"How is a monthly mortgage payment calculated?","acceptedAnswer":{"@type":"Answer","text":"A repayment mortgage uses the formula P × r ÷ (1 − (1 + r)^−n), where P is the loan, r is the monthly interest rate and n is the number of monthly payments. For example, £200,000 over 25 years at 5% costs about £1,169 a month."}},
+{"@type":"Question","name":"Is it worth overpaying my mortgage?","acceptedAnswer":{"@type":"Answer","text":"Overpaying reduces the balance that interest is charged on, so it can save thousands and shorten your term. Most fixed-rate deals let you overpay up to 10% of the balance each year without an early repayment charge. Check your own deal first."}},
+{"@type":"Question","name":"What is the difference between repayment and interest-only?","acceptedAnswer":{"@type":"Answer","text":"With a repayment mortgage each payment covers interest and some of the loan, so you own the home outright at the end. With interest-only you only pay the interest, so payments are lower but the full loan is still owed at the end of the term."}},
+{"@type":"Question","name":"What deposit do I need to buy a house in the UK?","acceptedAnswer":{"@type":"Answer","text":"The minimum is usually 5% of the price (a 95% LTV mortgage), but bigger deposits unlock cheaper rates, with notable steps at 90%, 85%, 75% and 60% loan-to-value."}},
+{"@type":"Question","name":"Does a longer mortgage term save money?","acceptedAnswer":{"@type":"Answer","text":"A longer term lowers the monthly payment but you pay interest for longer, so the total cost rises. Use the term slider to compare the monthly payment and total interest side by side."}}
+]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#calc">Skip to calculator</a>
+<header class="hero">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Site">
+      <a class="brand" href="./"><span class="logo" aria-hidden="true">🔑</span>Mortgage Calculator</a>
+      <div class="toplinks">
+        <a href="#afford">Affordability</a>
+        <a href="#faq">FAQs</a>
+        <a href="https://stamp-duty-calculator-england.vercel.app/">Stamp Duty calculator</a>
+      </div>
+    </nav>
+    <h1>UK Mortgage Calculator: repayments, overpayments &amp; how much you can borrow</h1>
+    <p class="lede">See your monthly payment, how your balance falls year by year, how much overpaying could save, and what lenders might offer on your income.</p>
+    <ul class="badges" aria-label="Highlights">
+      <li>Repayment &amp; interest-only</li>
+      <li>Overpayment savings</li>
+      <li>Income multiple affordability</li>
+      <li>Free · No sign-up</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="app" id="calc">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">Your mortgage</h2>
+      <div class="grid2" style="gap:14px">
+        <div class="field">
+          <label for="price">Property price</label>
+          <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="price" type="text" inputmode="numeric" autocomplete="off" value="300,000"></div>
+        </div>
+        <div class="field">
+          <label for="deposit">Deposit</label>
+          <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="deposit" type="text" inputmode="numeric" autocomplete="off" value="30,000" aria-describedby="dep-hint"></div>
+          <p class="hint" id="dep-hint">&nbsp;</p>
+        </div>
+      </div>
+      <div class="chips" id="depChips" aria-label="Deposit percentage" style="margin:-8px 0 18px"></div>
+      <div class="grid2" style="gap:14px">
+        <div class="field">
+          <label for="rate">Interest rate</label>
+          <div class="money pct"><input id="rate" type="number" inputmode="decimal" min="0" max="20" step="0.05" value="4.5"><span class="sfx" aria-hidden="true">%</span></div>
+        </div>
+        <div class="field">
+          <label for="term">Term: <span id="termOut">25 years</span></label>
+          <input id="term" type="range" min="5" max="40" step="1" value="25" aria-valuetext="25 years" style="margin-top:20px">
+        </div>
+      </div>
+      <fieldset>
+        <legend>Mortgage type</legend>
+        <div class="seg">
+          <label><input type="radio" name="type" value="repayment" checked><span>Repayment</span></label>
+          <label><input type="radio" name="type" value="interest-only"><span>Interest-only</span></label>
+        </div>
+      </fieldset>
+      <div class="grid2" style="gap:14px">
+        <div class="field">
+          <label for="over">Monthly overpayment</label>
+          <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="over" type="text" inputmode="numeric" autocomplete="off" value="100"></div>
+        </div>
+        <div class="field">
+          <label for="lump">One-off lump sum</label>
+          <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="lump" type="text" inputmode="numeric" autocomplete="off" value="0"></div>
+        </div>
+      </div>
+      <p class="hint" style="margin-top:-8px">Overpayments keep your payment the same and shorten the term. The lump sum is paid at the start.</p>
+    </section>
+
+    <section class="card sticky" aria-labelledby="out-h">
+      <h2 id="out-h" class="sr-only">Your results</h2>
+      <div class="big-label">Monthly payment</div>
+      <div class="big" id="pay" aria-live="polite">£0</div>
+      <p class="sub" id="summary">&nbsp;</p>
+      <div class="stats">
+        <div class="stat"><b id="loan">£0</b><span>Loan amount</span></div>
+        <div class="stat"><b id="ltv">0%</b><span id="ltvBand">Loan-to-value</span></div>
+        <div class="stat"><b id="interest">£0</b><span>Total interest</span></div>
+        <div class="stat"><b id="total">£0</b><span>Total repaid</span></div>
+      </div>
+      <div id="notes"></div>
+      <div class="actions">
+        <button class="btn" id="share" type="button">🔗 Copy share link</button>
+        <button class="btn ghost" id="copy" type="button">Copy result</button>
+        <a class="btn ghost" id="sdltLink" href="https://stamp-duty-calculator-england.vercel.app/">Stamp Duty on this price →</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid2 section">
+    <section class="card chart" aria-labelledby="chart-h">
+      <h2 id="chart-h">Balance over time</h2>
+      <div id="chart" role="img" aria-label="Chart of the remaining mortgage balance by year, with and without overpayments"></div>
+      <div class="legend"><span><i style="background:#94a3b8"></i>Without overpayments</span><span><i style="background:var(--accent)"></i>With overpayments</span></div>
+    </section>
+    <section class="card" aria-labelledby="split-h">
+      <h2 id="split-h">Where your money goes</h2>
+      <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <div id="donut" role="img" aria-label="Share of total repayments that is loan versus interest" style="width:170px"></div>
+        <div class="legend" style="flex-direction:column;gap:10px;font-size:15px" id="splitLegend"></div>
+      </div>
+      <h3 style="font-size:15px;margin:18px 0 8px">If rates change</h3>
+      <div class="bars" id="stress"></div>
+    </section>
+  </div>
+
+  <section class="card section" id="afford" aria-labelledby="aff-h">
+    <h2 id="aff-h">How much could I borrow?</h2>
+    <div class="grid2" style="gap:14px">
+      <div class="field">
+        <label for="inc1">Your annual income (before tax)</label>
+        <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="inc1" type="text" inputmode="numeric" autocomplete="off" value="60,000"></div>
+      </div>
+      <div class="field">
+        <label for="inc2">Partner’s income (optional)</label>
+        <div class="money"><span class="pfx" aria-hidden="true">£</span><input id="inc2" type="text" inputmode="numeric" autocomplete="off" value="0"></div>
+      </div>
+    </div>
+    <fieldset>
+      <legend>Income multiple</legend>
+      <div class="seg" id="multSeg">
+        <label><input type="radio" name="mult" value="4"><span>4×</span></label>
+        <label><input type="radio" name="mult" value="4.5" checked><span>4.5× typical</span></label>
+        <label><input type="radio" name="mult" value="5"><span>5×</span></label>
+        <label><input type="radio" name="mult" value="5.5"><span>5.5× high earner</span></label>
+      </div>
+    </fieldset>
+    <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <div class="stat"><b id="maxLoan">£0</b><span>Estimated maximum loan</span></div>
+      <div class="stat"><b id="maxPrice">£0</b><span>Max price with your deposit</span></div>
+      <div class="stat"><b id="maxPay">£0</b><span>Monthly payment at max loan</span></div>
+    </div>
+    <div id="affNote"></div>
+  </section>
+
+  <section class="card section" aria-labelledby="sched-h">
+    <details>
+      <summary style="cursor:pointer;font-weight:700"><span id="sched-h">Year-by-year repayment schedule</span></summary>
+      <div class="table-scroll" style="margin-top:12px">
+        <table>
+          <caption class="sr-only">Annual amortisation schedule</caption>
+          <thead><tr><th>Year</th><th class="r">Interest paid</th><th class="r">Loan repaid</th><th class="r">Balance at year end</th></tr></thead>
+          <tbody id="sched"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <article class="card section article" id="how">
+    <h2>How UK mortgage repayments work</h2>
+    <p>A mortgage is a long-term loan secured on your home. With a <strong>repayment</strong> (capital and interest) mortgage, every monthly payment covers that month’s interest plus a slice of the loan. Early on, most of each payment goes on interest. As the balance shrinks, more of it goes towards the loan, which is why the balance chart above curves downwards faster in later years. The monthly figure comes from the standard formula <em>P × r ÷ (1 − (1 + r)<sup>−n</sup>)</em>, where P is the loan, r is the monthly rate and n is the number of payments. For example, £200,000 over 25 years at 5% costs about £1,169 a month, and about £150,750 in interest overall.</p>
+    <h3>Repayment vs interest-only</h3>
+    <p>With an <strong>interest-only</strong> mortgage you just pay the interest each month. That makes payments much lower, but you still owe the full loan at the end of the term and need a credible plan to repay it, such as investments or selling the property. Interest-only is now mostly used for buy-to-let. For residential buyers lenders usually require a large deposit and a clear repayment strategy.</p>
+    <h3>Loan-to-value (LTV) and your deposit</h3>
+    <p>LTV is the loan as a percentage of the property’s value. A £30,000 deposit on a £300,000 home is a 90% LTV mortgage. Lenders price their rates in LTV tiers, usually 95%, 90%, 85%, 80%, 75% and 60%. Moving down even one tier can cut your rate noticeably, so check whether a slightly bigger deposit would get you into the next band. Don’t forget the upfront costs on top of the deposit: <a href="https://stamp-duty-calculator-england.vercel.app/">Stamp Duty</a>, solicitor’s fees, surveys and any lender arrangement fee.</p>
+    <h3>How much can I borrow?</h3>
+    <p>Most UK lenders cap borrowing at around <strong>4 to 4.5 times</strong> your gross annual income, or your combined income if you’re buying with someone else. Some lenders go to 5× or 5.5× for higher earners or certain professions. The income multiple is only a ceiling. Lenders also check your credit history, regular outgoings, childcare costs and other debts. They also stress-test whether you could still afford the payments if rates rose, which is why the “If rates change” panel is worth a look.</p>
+    <h3>Should I overpay?</h3>
+    <p>Overpaying reduces the balance that interest is charged on. That means a modest regular overpayment can cut years off your mortgage and save thousands in interest. Most fixed and tracker deals let you overpay up to <strong>10% of the outstanding balance each year</strong> without an early repayment charge (ERC). If your savings earn less after tax than your mortgage rate, overpaying is often a good use of spare cash. Keep an emergency fund first, though, because overpayments are hard to get back.</p>
+    <p class="muted">Learn more: <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home/mortgage-affordability-calculator" rel="noopener">MoneyHelper mortgage affordability guidance</a> (free government-backed guidance).</p>
+  </article>
+
+  <section class="section article faq" id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Mortgage FAQs</h2>
+    <details><summary>How much can I borrow for a mortgage in the UK?</summary><p>Most lenders offer around 4–4.5× your annual income (or joint income), and some go up to 5–5.5× for higher earners. They also check your outgoings and stress-test your payments against higher rates.</p></details>
+    <details><summary>How is a monthly mortgage payment calculated?</summary><p>It uses P × r ÷ (1 − (1 + r)^−n), where P is the loan, r the monthly interest rate and n the number of monthly payments. £200,000 over 25 years at 5% is about £1,169 a month.</p></details>
+    <details><summary>Is it worth overpaying my mortgage?</summary><p>Usually, if you have spare cash and an emergency fund. It cuts interest and shortens your term. Most fixed deals allow up to 10% of the balance a year without early repayment charges, but check yours first.</p></details>
+    <details><summary>What’s the difference between repayment and interest-only?</summary><p>Repayment clears the loan by the end of the term. Interest-only has lower payments, but the full loan is still owed at the end.</p></details>
+    <details><summary>What deposit do I need to buy a house in the UK?</summary><p>Usually at least 5% (95% LTV). Bigger deposits unlock cheaper rates at 90%, 85%, 75% and 60% LTV.</p></details>
+    <details><summary>Does a longer mortgage term save money?</summary><p>No. A longer term lowers the monthly payment but increases the total interest you pay. Drag the term slider to see the trade-off.</p></details>
+  </section>
+
+  <p class="disclaimer section"><strong>Disclaimer:</strong> These figures are illustrations, not a mortgage offer, and they aren’t financial advice. Real payments depend on your lender, product fees, rate changes after any fixed period and your circumstances. Income multiples are a rough guide; lenders make their own affordability assessment. Your home may be repossessed if you don’t keep up repayments on your mortgage. Speak to a qualified mortgage adviser before deciding.</p>
+
+  <section class="section" aria-labelledby="more-h">
+    <h2 id="more-h" style="font-size:20px">More free UK calculators</h2>
+    <ul class="more">
+      <li><a href="https://stamp-duty-calculator-england.vercel.app/">Stamp Duty Calculator<small>First-time buyer, second home &amp; non-resident</small></a></li>
+      <li><a href="https://uk-student-loan-repayment-calculator.vercel.app/">Student Loan Calculator<small>Plan 1, 2, 4, 5 &amp; Postgraduate</small></a></li>
+      <li><a href="https://degree-classification-calculator.vercel.app/">Degree Classification<small>First, 2:1 or 2:2 from your marks</small></a></li>
+      <li><a href="https://uk-working-days-calculator.vercel.app/">Working Days Calculator<small>Skips UK bank holidays</small></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>Built by <a href="https://mfaysal.com" rel="author">Mahir Faysal</a> · <a href="https://mfaysal.com/projects">More projects</a></span>
+    <span>Calculations run in your browser. Nothing is stored or sent.</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
